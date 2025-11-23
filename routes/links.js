@@ -6,9 +6,9 @@ const linkController = require("../Controllers/linkController");
   CRUD = Create, Read, Update, Delete
 */
 
-router.get("/", linkController.getAlllinks);
+router.get("/", linkController.getAllLinks);
 router.post("/", linkController.createLink);
-router.get("/:id", linkController.getAlllinkById);
+router.get("/:id", linkController.getAllLinkById);
 router.put("/:id", linkController.updateLinkById);
 router.delete("/:id", linkController.deleteLinkById);
 
