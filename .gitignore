@@ -1,0 +1,206 @@
+# Créé par https://www.toptal.com/developers/gitignore/api/node,windows,visualstudiocode,yarn
+# Modifier sur https://www.toptal.com/developers/gitignore?templates=node,windows,visualstudiocode,yarn
+
+### Nœud ###
+# Journaux
+journaux
+*.enregistrer
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Rapports de diagnostic (https://nodejs.org/api/report.html)
+rapport.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Données d'exécution
+pids
+*.pid
+*.graine
+*.pid.lock
+
+# Répertoire des bibliothèques instrumentées générées par jscoverage/JSCover
+lib-cov
+
+# Répertoire de couverture utilisé par des outils comme Istanbul
+couverture
+*.lcov
+
+# Couverture des tests à New York
+.nyc_output
+
+# Stockage intermédiaire Grunt (https://gruntjs.com/creating-plugins#storing-task-files)
+.grognement
+
+# Répertoire des dépendances Bower (https://bower.io/)
+composants Bower
+
+# Configuration de node-waf
+.lock-wscript
+
+# Modules complémentaires binaires compilés (https://nodejs.org/api/addons.html)
+compilation/publication
+
+# Répertoires de dépendances
+node_modules/
+jspm_packages/
+
+# Répertoire des dépendances de Snowpack (https://snowpack.dev/)
+modules_web/
+
+# Cache TypeScript
+*.tsbuildinfo
+
+# Répertoire cache npm optionnel
+.npm
+
+# Cache ESLint optionnel
+.eslintcache
+
+# Cache stylelint optionnel
+.stylelintcache
+
+# Cache de micro-bundles
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Historique REPL optionnel
+.node_repl_history
+
+# Sortie de 'npm pack'
+*.tgz
+
+# Fichier d'intégrité du fil
+.intégrité du fil
+
+# fichiers de variables d'environnement dotenv
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# Cache de parcel-bundler (https://parceljs.org/)
+.cache
+.cache-parcel
+
+# Sortie de la compilation Next.js
+.suivant
+dehors
+
+# Générer la sortie de compilation Nuxt.js
+.nuxt
+dist
+
+# Fichiers Gatsby
+.cache/
+# Commentez la ligne publique si votre projet utilise Gatsby et non Next.js
+# https://nextjs.org/blog/next-9-1#public-directory-support
+# publique
+
+# Sortie de la compilation VuePress
+.vuepress/dist
+
+# Répertoire temporaire et cache de vuepress v2.x
+.temp
+
+# Fichiers cache et fichiers générés de Docusaurus
+.docusaurus
+
+# Répertoires sans serveur
+.serverless/
+
+# Cache de la boîte à fusibles
+.fusebox/
+
+# Fichiers locaux DynamoDB
+.dynamodb/
+
+# Fichier de portage TernJS
+.tern-port
+
+# Stocke les versions de VSCode utilisées pour tester les extensions VSCode
+.vscode-test
+
+# yarn v2
+.yarn/cache
+.yarn/débranché
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+### Correctif de nœud ###
+# Répertoires Webpack sans serveur
+.webpack/
+
+# Cache stylelint optionnel
+
+# SvelteKit compiler / générer la sortie
+.svelte-kit
+
+### Visual Studio Code ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.extraits de code
+
+# Historique local pour Visual Studio Code
+.histoire/
+
+# Extensions Visual Studio Code créées
+*.vsix
+
+### Correctif Visual Studio Code ###
+# Ignorer tout l'historique local des fichiers
+.histoire
+.ionide
+
+### Windows ###
+# Fichiers de cache des miniatures Windows
+Thumbs.db
+Thumbs.db:cryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Fichier de vidage
+*.stackdump
+
+# Fichier de configuration du dossier
+[Dd]desktop.ini
+
+# Corbeille utilisée sur les partages de fichiers
+$RECYCLE.BIN/
+
+# Fichiers d'installation Windows
+*.taxi
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Raccourcis Windows
+*.lnk
+
+### fil ###
+# https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
+
+.fil/*
+!.yarn/releases
+!.fil/patches
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+
+# Si vous n'utilisez PAS Zero-installs, alors :
+# Commentez les lignes suivantes
+!.yarn/cache
+
+# et décommentez les lignes suivantes
+# .pnp.*
+
+# Fin de https://www.toptal.com/developers/gitignore/api/node,windows,visualstudiocode,yarn
