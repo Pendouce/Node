@@ -1,20 +1,25 @@
 const mongoose = require("mongoose");
-const Shema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-const CommentShema = new Shema({
+const CommentSchema = new Schema({
   text: {
     type: String,
-    required: [true, "Le text du commentaire est obligatoire"],
+    required: [true, "Le texte du commentaire est obligatoire"],
   },
   link: {
-    type: Shema.Types.ObjectId, //Stock l'id d'un objet Link
-    ref: "Link", // Fait reference au model 'Link'
+    type: Schema.Types.ObjectId, // Stocke l'ID d'un objet Link
+    ref: "Link", // Fait réference au modèle 'Link'
     required: true,
   },
   createdAt: {
     type: Date,
     default: Date.now,
   },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
 });
 
-module.exports = mongoose.model("Comment", CommentShema);
+module.exports = mongoose.model("Comment", CommentSchema);

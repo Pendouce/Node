@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-const Shema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-const LinkShema = new Shema({
+const LinkShema = new Schema({
   title: {
     type: String,
     required: [true, "Le titre est obligatoire"],

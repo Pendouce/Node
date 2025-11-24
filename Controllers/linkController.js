@@ -1,10 +1,13 @@
 const Link = require("../Models/Link");
+const Comment = require("../Models/Comment");
 
 // GET
 
 exports.getAllLinks = async (req, res) => {
   try {
-    const links = await Link.find().sort({ createdAt: -1 });
+    const links = await Link.find()
+      .populate("user", "email")
+      .sort({ createdAt: -1 });
     res.status(200).json(links);
   } catch (error) {
     res.status(500).json({ message: `Erreur serveur : ${error.message}` });
@@ -15,7 +18,7 @@ exports.getAllLinks = async (req, res) => {
 
 exports.getAllLinkById = async (req, res) => {
   try {
-    const link = await Link.findById(req.params.id);
+    const link = await Link.findById(req.params.id).populate("user", "email");
     if (!link) {
       return res.status(404).json({ message: "Link not found" });
     }
@@ -27,15 +30,14 @@ exports.getAllLinkById = async (req, res) => {
 
 // POST = Creation d'un link
 exports.createLink = async (req, res) => {
-  const { title, url, description } = req.body;
-  const newLink = new Link({
-    title: title,
-    url: url,
-    description: description,
-  });
-
   try {
-    const savedLink = await newLink.save();
+    const newLink = await Link.create({
+      /* title: title,
+          url: url,
+          description: description, */
+      ...req.body,
+      user: req.user.id,
+    });
     res.status(201).json(newLink);
   } catch (error) {
     res.status(400).json({ message: `Erreur validation : ${error.message}` });
@@ -65,6 +67,7 @@ exports.deleteLinkById = async (req, res) => {
     if (!link) {
       return res.status(404).json({ message: "Link not found" });
     }
+    await Comment.deleteMany({ link: req.params.id });
     res.status(204).send();
   } catch (error) {
     res.status(500).json({ message: `Erreur serveur : ${error.message}` });
