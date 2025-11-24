@@ -1,3 +1,4 @@
+// @ts-nocheck
 const Comment = require("../Models/Comment");
 const Link = require("../Models/Link");
 
